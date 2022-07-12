@@ -1,9 +1,11 @@
 <?php
 
+use App\Http\Controllers\Api\ProvinceController;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return [
-        "success" => true,
-    ];
-});
+// Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+//     return $request->user();
+// });
+
+Route::apiResource('/provinces', ProvinceController::class);
