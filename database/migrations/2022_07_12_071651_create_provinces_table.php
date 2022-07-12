@@ -15,7 +15,8 @@ return new class extends Migration
     {
         Schema::create('provinces', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->string('libelle_prov', 255);
+            $table->string('code_prov',255);
         });
     }
 

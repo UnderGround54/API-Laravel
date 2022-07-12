@@ -3,13 +3,11 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Models\Province;
 use Illuminate\Http\Request;
 
 class ProvinceController extends Controller
 {
-<<<<<<< Updated upstream
-    //
-=======
     /**
      * Display a listing of the resource.
      *
@@ -78,5 +76,4 @@ class ProvinceController extends Controller
             ], 200);
         };
     }
->>>>>>> Stashed changes
 }
