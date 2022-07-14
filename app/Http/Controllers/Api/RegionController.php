@@ -3,10 +3,10 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
-use App\Models\Province;
+use App\Models\Region;
 use Illuminate\Http\Request;
 
-class ProvinceController extends Controller
+class RegionController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,9 +15,7 @@ class ProvinceController extends Controller
      */
     public function index()
     {
-        return Province::orderByDesc('id')->get();
-
-        // return $provinces->toJson(JSON_PRETTY_PRINT);
+        return Region::orderByDesc('id')->get();
     }
 
     /**
@@ -28,52 +26,52 @@ class ProvinceController extends Controller
      */
     public function store(Request $request)
     {
-        if (Province::create($request->all())) {
+        if(Region::create($request->all())){
             return response()->json([
-                'message' => 'insertion avec success'
-            ], 200);
-       };
+                "message" => "insertion avec succes"
+            ],200);
+        }
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Province  $province
+     * @param  \App\Models\Region  $region
      * @return \Illuminate\Http\Response
      */
-    public function show(Province $province)
+    public function show(Region $region)
     {
-        return $province;
+        return $region;
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Province  $province
+     * @param  \App\Models\Region  $region
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Province $province)
+    public function update(Request $request, Region $region)
     {
-        if ($province->update($request->all())) {
+        if($region->update($request->all())){
             return response()->json([
-                'message' => 'Update avec success'
-            ], 200);
-        };
+                "message" => "Mise à jour avec succes"
+            ],200);
+        }
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Province  $province
+     * @param  \App\Models\Region  $region
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Province $province)
+    public function destroy(Region $region)
     {
-        if ($province->delete()){
+        if($region->delete()){
             return response()->json([
-                'message' => 'suppression avec succes'
-            ], 200);
-        };
+                "message" => "Suppresion avec succes"
+            ],200);
+        }
     }
 }
